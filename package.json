@@ -1,5 +1,5 @@
 {
-  "name": "simple-crud", // TODO
+  "name": "notion-api",
   "description": "",
   "version": "0.1.0",
   "devDependencies": {
