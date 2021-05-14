@@ -2,16 +2,16 @@ const { Client } = require('@notionhq/client')
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
-const searchForPage = async (page_title) => {
+const searchForPage = async (pageTitle) => {
   const response = await notion.search({
-    query: page_title,
+    query: pageTitle,
   })
   return response
 }
 
 export default async (event) => {
   try {
-    const result = await searchForPage(event.pathParameters.pageTitle)
+    const result = await searchForPage(event.pathParameters.page_title)
     return result
   } catch (err) {
     return { error: err }

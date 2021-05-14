@@ -3,5 +3,5 @@ get:
   events:
     - httpApi:
         method: GET
-        path: /{pageTitle}
+        path: /{page_title}
   environment:
