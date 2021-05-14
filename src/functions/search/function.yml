@@ -1,4 +1,4 @@
-get:
+search:
   handler: src/functions/search/index.default
   events:
     - httpApi:
