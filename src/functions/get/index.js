@@ -1,4 +1,4 @@
-import { Client } from '@notionhq/client'
+const { Client } = require('@notionhq/client')
 
 // Initializing a client
 const notion = new Client({
