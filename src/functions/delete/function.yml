@@ -3,5 +3,5 @@ delete:
   events:
     - httpApi:
         method: DELETE
-        path: /{id}
+        path: /{page_id}
   environment:
