@@ -16,6 +16,7 @@ functions:
   delete: ${file(src/functions/delete/function.yml):delete}
   get: ${file(src/functions/get/function.yml):get}
   update: ${file(src/functions/update/function.yml):update}
+  search: ${file(src/functions/search/function.yml):search}
 
 custom:
   webpack:
@@ -28,6 +29,5 @@ custom:
 
 package:
   individually: true
-
 # resources:
 #   - ${file(src/resources/dynamodb.yml)}

@@ -1,0 +1,7 @@
+get:
+  handler: src/functions/search/index.default
+  events:
+    - httpApi:
+        method: GET
+        path: /{pageTitle}
+  environment:
