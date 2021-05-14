@@ -1,7 +1,6 @@
-import AWS from 'aws-sdk'
-const db = new AWS.DynamoDB.DocumentClient()
+const { Client } = require('@notionhq/client')
 
-async function createData(id, data) {
+async function createPage(id, data) {
   const params = {
     TableName: process.env.TABLE_NAME,
     Item: { id, data },

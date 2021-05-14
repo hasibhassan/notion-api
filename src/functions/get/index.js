@@ -5,16 +5,16 @@ const notion = new Client({
   auth: process.env.NOTION_TOKEN,
 })
 
-const readDB = async () => {
-  const response = await notion.databases.retrieve({
-    database_id: process.env.DATABASE_ID,
+const getPage = async () => {
+  const response = await notion.pages.retrieve({
+    page_id: process.env.PAGE_ID,
   })
   return response
 }
 
 export default async (event) => {
   try {
-    const result = await readDB()
+    const result = await getPage()
     return result
   } catch (err) {
     return { error: err }

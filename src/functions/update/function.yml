@@ -2,6 +2,6 @@ update:
   handler: src/functions/update/index.default
   events:
     - httpApi:
-        method: POST
+        method: PATCH
         path: /{id}
   environment:
