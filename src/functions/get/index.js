@@ -1,23 +1,21 @@
-import AWS from 'aws-sdk'
-const db = new AWS.DynamoDB.DocumentClient()
+import { Client } from '@notionhq/client'
 
-async function read(id) {
-  const params = {
-    TableName: process.env.TABLE_NAME,
-    Key: { id },
-  }
-  try {
-    const data = await db.get(params).promise()
-    return data
-  } catch (err) {
-    return err
-  }
+// Initializing a client
+const notion = new Client({
+  auth: process.env.NOTION_TOKEN,
+})
+
+const readDB = async () => {
+  const response = await notion.databases.retrieve({
+    database_id: process.env.DATABASE_ID,
+  })
+  return response
 }
 
 export default async (event) => {
   try {
-    const result = await read(event.pathParameters.id)
-    return result.Item.data
+    const result = await readDB()
+    return result
   } catch (err) {
     return { error: err }
   }
