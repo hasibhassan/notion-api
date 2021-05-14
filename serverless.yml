@@ -3,6 +3,7 @@ service: notion-api
 provider:
   name: aws
   runtime: nodejs14.x
+  cors: true
   lambdaHashingVersion: 20201221
   stackTags:
     slsApp: notionApi

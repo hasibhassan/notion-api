@@ -1,6 +1,6 @@
 const { Client } = require('@notionhq/client')
 
-const notion = new Client({ auth: process.env.NOTION_API_KEY })
+const notion = new Client({ auth: process.env.NOTION_TOKEN })
 
 const searchForPage = async (pageTitle) => {
   const response = await notion.search({
