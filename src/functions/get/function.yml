@@ -2,6 +2,6 @@ get:
   handler: src/functions/get/index.default
   events:
     - httpApi:
-        method: PUT
-        path: /{id}
+        method: GET
+        path: /
   environment:
